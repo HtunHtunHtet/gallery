@@ -27,10 +27,17 @@ include('init.php');
 
     <div class="row">
         <?php
-            $users  = $database->query("Select * From Users")->fetch_all(MYSQLI_ASSOC);
+            /*$users  = $database->query("Select * From Users")->fetch_all(MYSQLI_ASSOC);
             foreach($users as $user) {
                echo $user['username'];
-            }
+            }*/
+
+        $users = User::findAllUsers();
+
+        foreach ($users as $user) {
+            echo $user['username'].'<br/>';
+        }
+
         ?>
     </div>
 

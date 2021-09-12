@@ -73,3 +73,5 @@ class Database implements DatabaseInterface {
        return  $this->mysqli->real_escape_string($string);
     }
 }
+
+$database  = new Database();
